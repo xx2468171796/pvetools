@@ -2,7 +2,7 @@
 
 ```bash
 # 下载并运行安装脚本
-wget -O pvetools.sh https://github.com/xx2468171796/pvetools/main/pvetools.sh && chmod +x frpc-install.sh && sudo ./pvetools.sh
+wget -O pvetools.sh https://github.com/xx2468171796/pvetools/blob/main/pvetools.sh && chmod +x frpc-install.sh && sudo ./pvetools.sh
 ```
 **概览**
 - `pvetools.sh` 是一个在 Proxmox VE 主机上运行的交互式管理脚本，支持为 QEMU 虚拟机(`qm`)和 LXC 容器(`pct`)创建定时任务与执行常见操作。
