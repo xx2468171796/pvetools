@@ -10,12 +10,11 @@ wget -O pvetools.sh https://github.com/xx2468171796/pvetools/main/pvetools.sh &&
 - 广告与支持：孤独制作 ｜ 电报群 https://t.me/+RZMe7fnvvUg1OWJl
 
 **运行环境**
-- 仅在 PVE 主机上使用（需有 `qm`/`pct`）。
+- 仅在 PVE 主机上使用
 - 以 `root` 身份执行。
 - 脚本内部使用绝对路径调用系统命令，确保 cron 环境可用。
 
 **安装与快捷命令**
-- 直接运行：`bash pvetools.sh`
 - 菜单内提供“安装/更新快捷命令”：会将脚本安装到 `/usr/local/sbin/pvetools`。
 - 安装后可直接运行：`pvetools`
 
