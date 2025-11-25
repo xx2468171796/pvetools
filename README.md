@@ -3,7 +3,9 @@
 ## 国内使用
 ```bash
 # 下载并运行安装脚本
-bash <(curl -sSL https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh)
+wget https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh
+chmod +x pvetools.sh
+./pvetools.sh
 ```
 ## 国外
 ```bash
