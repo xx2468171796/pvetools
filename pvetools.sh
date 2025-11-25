@@ -2032,11 +2032,38 @@ action_remove_passthrough() {
 action_install_shortcut() {
   show_sub_banner "安装快捷命令"
   local dst="/usr/local/sbin/pvetools"
+  local src="$SCRIPT_ABS"
+  
+  # 检查源文件是否有效
+  if [[ ! -f "$src" ]] || [[ "$src" == *"/proc/"* ]] || [[ "$src" == *"pipe:"* ]]; then
+    # 尝试从当前目录查找
+    if [[ -f "./pvetools.sh" ]]; then
+      src="$(readlink -f ./pvetools.sh)"
+      log "使用当前目录脚本: $src"
+    elif [[ -f "$dst" ]]; then
+      log "快捷命令已存在: $dst"
+      echo ""
+      echo -e "${BOLD_YELLOW}提示:${NC} 如需更新，请先下载脚本到本地再安装："
+      echo "  wget -O pvetools.sh <URL>"
+      echo "  ./pvetools.sh"
+      echo "  # 然后选择安装快捷命令"
+      return
+    else
+      err "无法找到脚本文件"
+      echo ""
+      echo -e "${BOLD_YELLOW}提示:${NC} 请先下载脚本到本地："
+      echo "  wget -O pvetools.sh <URL>"
+      echo "  chmod +x pvetools.sh"
+      echo "  ./pvetools.sh"
+      return 1
+    fi
+  fi
+  
   mkdir -p "/usr/local/sbin"
   if command -v install &>/dev/null; then
-    install -m 0755 "$SCRIPT_ABS" "$dst"
+    install -m 0755 "$src" "$dst"
   else
-    cp -f "$SCRIPT_ABS" "$dst" 2>/dev/null || ln -sf "$SCRIPT_ABS" "$dst"
+    cp -f "$src" "$dst" 2>/dev/null
     chmod 0755 "$dst" 2>/dev/null || true
   fi
   log "已安装: $dst"
