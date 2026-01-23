@@ -2,15 +2,13 @@
 
 ## 鍥藉唴浣跨敤
 ```bash
-# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?
-wget https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh
+# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?wget https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh
 chmod +x pvetools.sh
 ./pvetools.sh
 ```
 ## 鍥藉
 ```bash
-# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?
-wget https://raw.githubusercontent.com/xx2468171796/pvetools/main/pvetools.sh
+# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?wget https://raw.githubusercontent.com/xx2468171796/pvetools/main/pvetools.sh
 chmod +x pvetools.sh
 ./pvetools.sh
 ```
@@ -27,10 +25,7 @@ chmod +x pvetools.sh
 
 闆嗘垚 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞嗐€佺‖鐩樼洿閫氱瓑鍔熻兘
 
-[蹇€熷紑濮媇(#-蹇€熷紑濮? 鈥?
-[鍔熻兘浠嬬粛](#-鍔熻兘妯″潡) 鈥?
-[浣跨敤鎸囧崡](USAGE.md) 鈥?
-[甯歌闂](#-甯歌闂)
+[蹇€熷紑濮媇(#-蹇€熷紑濮? 鈥?[鍔熻兘浠嬬粛](#-鍔熻兘妯″潡) 鈥?[浣跨敤鎸囧崡](USAGE.md) 鈥?[甯歌闂](#-甯歌闂)
 
 </div>
 
@@ -78,12 +73,9 @@ chmod +x pvetools.sh
 ---
 
 ## 馃殌 蹇€熷紑濮?
-
 ### 涓€閿繍琛岋紙鎺ㄨ崘锛?
-
 ```bash
-# 涓嬭浇骞惰繍琛?
-wget -qO pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh && bash pvetools.sh
+# 涓嬭浇骞惰繍琛?wget -qO pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh && bash pvetools.sh
 ```
 
 ### 鏈湴瀹夎
@@ -113,34 +105,24 @@ chmod +x pvetools.sh
 ---
 
 ## 馃摉 涓昏彍鍗曢瑙?
-
 ```
 鈺斺晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晽
-鈺?                 PVETools v3.2                               鈺?
-鈺?               Proxmox VE 缁煎悎绠＄悊宸ュ叿                        鈺?
-鈺氣晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨暆
+鈺?                 PVETools v3.2                               鈺?鈺?               Proxmox VE 缁煎悎绠＄悊宸ュ叿                        鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨暆
   瀛ょ嫭鍒朵綔 | https://t.me/+RZMe7fnvvUg1OWJl
 
   PVE 鐗堟湰: 8.x  |  鐜: 瀹夸富鏈?
-
 璇烽€夋嫨鍔熻兘妯″潡:
 
-  [1] VM/CT 绠＄悊      - 鍗虫椂鎿嶄綔銆佸揩鐓с€佸畾鏃朵换鍔?
-  [2] Docker 閰嶇疆     - LXC 瀹瑰櫒 Docker 鏀寔
-  [3] 瀛樺偍绠＄悊        - LVM-Thin銆佺‖鐩樼洿閫?
-  [4] 绯荤粺宸ュ叿        - 蹇嵎鍛戒护銆佹崲婧愩€佺郴缁熶俊鎭?
-  [5] 甯姪
+  [1] VM/CT 绠＄悊      - 鍗虫椂鎿嶄綔銆佸揩鐓с€佸畾鏃朵换鍔?  [2] Docker 閰嶇疆     - LXC 瀹瑰櫒 Docker 鏀寔
+  [3] 瀛樺偍绠＄悊        - LVM-Thin銆佺‖鐩樼洿閫?  [4] 绯荤粺宸ュ叿        - 蹇嵎鍛戒护銆佹崲婧愩€佺郴缁熶俊鎭?  [5] 甯姪
 
-  [0] 閫€鍑?
-```
+  [0] 閫€鍑?```
 
 ---
 
 ## 馃敡 鍛戒护琛岀敤娉?
-
 ```bash
-# 浜や簰寮忚彍鍗?
-pvetools
+# 浜や簰寮忚彍鍗?pvetools
 
 # 鐩存帴瀹夎蹇嵎鍛戒护
 pvetools install
@@ -174,8 +156,7 @@ pvetools --cron snap-rollback <type> <vmid> latest <prefix>
 <details>
 <summary><b>Q: 鎻愮ず"璇蜂互 root 韬唤杩愯姝よ剼鏈?</b></summary>
 
-A: 鏈剼鏈渶瑕?root 鏉冮檺杩愯锛岃浣跨敤浠ヤ笅鏂瑰紡锛?
-```bash
+A: 鏈剼鏈渶瑕?root 鏉冮檺杩愯锛岃浣跨敤浠ヤ笅鏂瑰紡锛?```bash
 sudo ./pvetools.sh
 # 鎴栧垏鎹㈠埌 root 鐢ㄦ埛
 su -
@@ -205,9 +186,7 @@ A: 纭铏氭嫙鏈虹鐩樻敮鎸佸揩鐓у姛鑳斤細
 <details>
 <summary><b>Q: Docker 閰嶇疆鍚庡鍣ㄦ棤娉曞惎鍔?/b></summary>
 
-A: 纭繚瀹屾垚浠ヤ笅姝ラ锛?
-1. 閰嶇疆瀹夸富鏈猴紙闇€閲嶅惎 PVE锛?
-2. 閰嶇疆鐩爣瀹瑰櫒
+A: 纭繚瀹屾垚浠ヤ笅姝ラ锛?1. 閰嶇疆瀹夸富鏈猴紙闇€閲嶅惎 PVE锛?2. 閰嶇疆鐩爣瀹瑰櫒
 3. 鍦ㄥ鍣ㄥ唴瀹夎 Docker
 </details>
 
@@ -215,17 +194,14 @@ A: 纭繚瀹屾垚浠ヤ笅姝ラ锛?
 <summary><b>Q: 纭洏鐩撮€氬悗 VM 鏃犳硶璇嗗埆纾佺洏</b></summary>
 
 A: 妫€鏌ヤ互涓嬪嚑鐐癸細
-1. 纭 VM 宸插叧鏈哄啀杩涜鐩撮€氶厤缃?
-2. 妫€鏌ョ鐩樻槸鍚﹁鍏朵粬 VM 鍗犵敤
-3. 灏濊瘯鏇存崲鎺ュ彛绫诲瀷锛圫CSI/SATA/VirtIO锛?
-</details>
+1. 纭 VM 宸插叧鏈哄啀杩涜鐩撮€氶厤缃?2. 妫€鏌ョ鐩樻槸鍚﹁鍏朵粬 VM 鍗犵敤
+3. 灏濊瘯鏇存崲鎺ュ彛绫诲瀷锛圫CSI/SATA/VirtIO锛?</details>
 
 ---
 
 ## 馃檹 鑷磋阿
 
 鏈伐鍏烽泦鎴愪簡浠ヤ笅浼樼鐨勭涓夋柟宸ュ叿锛?
-
 | 宸ュ叿 | 浣滆€?| 閾炬帴 |
 |------|------|------|
 | Linux 涓€閿崲婧?| SuperManito | [GitHub](https://github.com/SuperManito/LinuxMirrors) |
@@ -243,16 +219,12 @@ A: 妫€鏌ヤ互涓嬪嚑鐐癸細
   - S-UI 闈㈡澘瀹夎 (alireza0)
 
 ### v3.1
-- 鏂板锛氱‖鐩樼洿閫氬姛鑳?
-  - 鏀寔灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU VM
+- 鏂板锛氱‖鐩樼洿閫氬姛鑳?  - 鏀寔灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU VM
   - 鏀寔 SCSI/SATA/VirtIO 鎺ュ彛绫诲瀷
   - 鏌ョ湅鍜屽垹闄ょ洿閫氶厤缃?
-
 ### v3.0
 - 閲嶆瀯锛氫笁鍚堜竴缁熶竴鑴氭湰
-  - 鏁村悎 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞?
-  - 鍏ㄦ柊浜や簰寮忚彍鍗曠晫闈?
-  - 缁熶竴鐨?Y/N 纭鎿嶄綔
+  - 鏁村悎 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞?  - 鍏ㄦ柊浜や簰寮忚彍鍗曠晫闈?  - 缁熶竴鐨?Y/N 纭鎿嶄綔
   - 缇庡寲杈撳嚭鏍煎紡
 
 ### v2.0
@@ -262,19 +234,14 @@ A: 妫€鏌ヤ互涓嬪嚑鐐癸細
 ### v1.0
 - 鍒濆鐗堟湰
 - 瀹氭椂閲嶅惎銆佸揩鐓х鐞?
-
 ---
 
 ## 馃摐 璁稿彲璇?
-
 鏈」鐩噰鐢?MIT 璁稿彲璇侊紝璇﹁ [LICENSE](LICENSE) 鏂囦欢銆?
-
 ---
 
 ## 馃 鍙嶉涓庢敮鎸?
-
 濡傛湁闂鎴栧缓璁紝娆㈣繋锛?
-
 - 馃摦 鎻愪氦 [Issue](https://github.com/YOUR_USERNAME/PVEt/issues)
 - 馃挰 鍔犲叆 [鐢垫姤缇(https://t.me/+RZMe7fnvvUg1OWJl) 浜ゆ祦
 
@@ -287,6 +254,7 @@ A: 妫€鏌ヤ互涓嬪嚑鐐癸細
 Made with 鉂わ笍 for PVE Users
 
 </div>
+
 ---
 
 ## 支持作者 / 打赏
@@ -297,7 +265,7 @@ Made with 鉂わ笍 for PVE Users
 
 ### USDT (TRC20)
 
-- 地址：TNp2BLnqrsgGPjrABQwvTq6cWyT8iRKk3D
+- 地址：`TNp2BLnqrsgGPjrABQwvTq6cWyT8iRKk3D`
 - 网络：TRC20
 
 ![USDT TRC20 QR](usdt_trc20_qr.jpg)
@@ -310,9 +278,7 @@ If this project helps you, consider supporting the author (optional).
 
 ### USDT (TRC20)
 
-- Address: TNp2BLnqrsgGPjrABQwvTq6cWyT8iRKk3D
+- Address: `TNp2BLnqrsgGPjrABQwvTq6cWyT8iRKk3D`
 - Network: TRC20
 
 ![USDT TRC20 QR](usdt_trc20_qr.jpg)
-
-
