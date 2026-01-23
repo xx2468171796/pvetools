@@ -1,259 +1,499 @@
-﻿# PVETOOLS宸ュ叿浠嬬粛
+﻿![logo](https://upload-images.jianshu.io/upload_images/4171480-4fc23dfbe28b491a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 鍥藉唴浣跨敤
-```bash
-# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?wget https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh
-chmod +x pvetools.sh
+# pvetools
+proxmox ve tools script(debian9+ can use it).Including `email`, `samba`,` NFS  set zfs max ram`, `nested virtualization` ,`docker `, `pci passthrough` etc.
+for english user,please look the end of readme.
+
+这是一个为proxmox ve写的工具脚本（理论上debian9+可以用）。包括`配置邮件`，`samba`，`NFS`，`zfs`，`嵌套虚拟化`，`docker`，`硬盘直通`等功能。
+
+
+
+### 安装
+
+##### 中国用户:
+
+###### 方式一：命令行安装
+
+> 需要用root账号来运行
+
+在终端中按行分别执行以下内容：
+
+>强烈建议先删除企业源：`rm /etc/apt/sources.list.d/pve-enterprise.list`
+
+```
+export LC_ALL=en_US.UTF-8
+apt update && apt -y install git && git clone https://github.com/ivanhao/pvetools.git
+cd pvetools
 ./pvetools.sh
 ```
-## 鍥藉
-```bash
-# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?wget https://raw.githubusercontent.com/xx2468171796/pvetools/main/pvetools.sh
-chmod +x pvetools.sh
+
+### 一键无脑安装:
+
+```
+sver=`cat /etc/os-release|grep VERSION_CODENAME|awk -F '=' '{print $2}'` && echo "nameserver  8.8.8.8" >> /etc/resolv.conf && rm -rf pvetools && echo "deb http://mirrors.ustc.edu.cn/proxmox/debian/pve/ $sver pve-no-subscription" > /etc/apt/sources.list.d/pve-no-sub.list && sed -i 's|deb|#deb|' /etc/apt/sources.list.d/pve-enterprise.list && echo "" > /etc/apt/sources.list.d/ceph.list && export LC_ALL=en_US.UTF-8 && apt update && apt -y install git && git clone https://github.com/ivanhao/pvetools.git && echo "cd /root/pvetools && ./pvetools.sh" > pvetools/pvetools && chmod +x pvetools/pvetools* && ln -s /root/pvetools/pvetools /usr/local/bin/pvetools && pvetools
+```
+
+###### 方式二：下载zip安装
+
+![download](https://upload-images.jianshu.io/upload_images/4171480-49193f4b6f4040fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+- 建议使用方式一来安装，不建议直接下载单sh脚本使用，因为那样更新的功能会无法使用！
+
+- 如果网络无法使用，或命令行使用有困难，可以使用方式二下载zip包拷入系统中使用。
+
+### 卸载
+1. 删除下载的pvetools目录
+
+
+### 运行
+
+在shell中进入pvetools目录，输入
+`
+./pvetools.sh
+`
+* 如果提示没有权限，输入`chmod +x ./*.sh`
+
+### 主界面
+
+![main](https://upload-images.jianshu.io/upload_images/4171480-501e3adb625c82fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![main1](https://upload-images.jianshu.io/upload_images/4171480-53fc13764f684c4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+
+根据需要选择对应的选项即可。
+
+#### 配置邮件说明：
+
+只有以下界面需要用tab键选成红框的内容,其他的一律无脑回车即可。
+
+![mail](https://upload-images.jianshu.io/upload_images/4171480-2ee76fb89c0f253e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+#### 如果这个脚本帮到你了，麻烦点一下右上角的star小星星^_^
+
+## qq交流群: 878510703
+
+![qq](http://upload-images.jianshu.io/upload_images/4171480-e0204ead0fb41d5e.jpg)
+
+## 如果觉得好的请捐赠一下^_^
+![alipay](https://upload-images.jianshu.io/upload_images/4171480-04c3ebb5c11cfdf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+感谢捐赠人员！
+
+捐赠列表：
+
+杨惠(来源qq)
+
+蓝蓝的天空（来源qq）
+
+久别重逢（来源qq）
+
+小呀嘛小Kiwi（来源qq)
+
+*兴乐（来源支付宝）
+
+孤独的根号三 （来源qq）
+
+我心依旧丶(来源qq)
+
+*俊磊（来源支付宝）
+
+*家鑫（来源支付宝）
+
+*小虎（来源支付宝）
+
+*杭（来源支付宝）
+
+*伟（来源支付宝）
+
+*棘（来源支付宝）
+
+zm （来源qq）
+
+*阳 (来源支付宝)
+
+**鑫 (来源支付宝)
+
+**尧 (来源支付宝)
+
+*潋 (来源支付宝)
+
+**泽 (来源支付宝)
+
+**涛 (来源支付宝)
+
+*韬 (来源支付宝)
+
+**旭 (来源支付宝)
+
+**明 (来源支付宝)
+
+**锐 (来源支付宝)
+
+# [版本说明]
+
+##### v2.4.0
+
+发布时间：2024.02.08
+
+new feature:
+
+* 修复有些功能还原配置时出现问题，比如温度显示，去除订阅等
+
+* 修复配置apt国内源、安装配置VIM可导致原配置文件被覆盖
+
+##### v2.3.9
+
+发布时间：2023.10.19
+
+new feature:
+
+* 增加pve8的支持
+
+* 优化英文语言的显示
+
+##### v2.3.6
+
+发布时间：2023.02.16
+
+new feature:
+
+* 合并网友“for5million”提交的关于pci直通的修复。
+
+##### v2.3.5
+
+发布时间：2022.09.14
+
+new feature:
+
+* 修复docker无法安装的问题，更换alpine的安装源。
+
+##### v2.3.2
+
+发布时间：2022.07.14
+
+new feature:
+
+* 温度显示上方增加CPU频率显示。
+* add cpu frequency display.
+
+
+##### v2.3.1
+
+发布时间：2022.07.13
+
+* 调整省电模式powersave为conservative。
+* change cpufrequtils from 'powersave' to 'conservative'。
+
+
+##### v2.3.0
+
+发布时间：2022.05.30
+
+new feature:
+
+* 修复pve7（debian 11)后security更新源地址格式变动的影响。
+* fix pve7 (debian 11) security source address.
+
+* 添加pve7以上版本配置硬件直通里的参数`iommu=pt pcie_acs_override=downstream`
+* add pve7　grub config `iommu=pt pcie_acs_override=downstream`
+
+* 删除默认.vimrc中重复的`set termencoding=unix`
+* delete .vimrc duplicate termencoding setting `set termencoding=unix`
+
+* 增加去除订阅提示的修复
+* add reinstall proxmox-widget-toolkit to fix remove subscription failure.
+
+##### v2.2.9
+
+发布时间：2022.05.29
+
+new feature:
+
+* 增加常用工具下的自动扩展ROOT分区可用空间，比如有些用户使用dd等方式克隆系统盘，更换大硬盘还原镜像后可以一键扩展分区
+* add auto expand / partition size.
+
+##### v2.2.8
+
+发布时间：2021.10.26
+
+new feature:
+
+* 优化pve7去订阅提示的判断和处理。
+* fix pve7 subscription note.
+
+##### v2.2.7
+
+发布时间：2021.10.14
+
+new feature:
+
+* 在常用的工具下添加pve界面黑暗模式
+* add proxmox ve darkmode interface to manyTools.
+
+##### v2.2.6
+
+发布时间：2021.09.09
+
+new feature:
+
+* 添加pve7的支持。
+* add proxmox ve 7.x support.
+
+##### v2.2.5
+
+发布时间：2020.12.16
+
+new feature:
+
+* 优化pve升级后温度安装提示判断逻辑。
+* update sensors data install.
+
+##### v2.2.4
+
+发布时间：2020.12.14
+
+new feature:
+
+* 修复温度显示界面高度自适应。
+* fix sensors display interface.
+
+##### v2.2.3
+
+发布时间：2020.12.09
+
+new feature:
+
+* 增加对/etc/pve/qemu-server下的conf文件自动备份功能，可以选择备份路径和保留备份个数，建议备份到系统分区以外的虚拟机数据盘中，这样重装系统后方便直接恢复
+
+
+##### v2.2.2
+
+发布时间：2020.11.30
+
+new feature:
+
+* 根据群友`嗨 我是奶酪`的建议，添加pve 更新源地址为非订阅更新源
+
+
+
+##### v2.2.0
+
+发布时间：2020.08.17
+
+new feature:
+
+* 增加USB设备做为系统盘的优化，在'常用工具'下。
+
+##### v2.1.9
+
+发布时间：2020.07.15
+
+new feature:
+
+* 增加N卡vbios的提示功能，在'常用工具'下。
+
+##### v2.1.8
+
+发布时间：2020.07.14
+
+new feature:
+
+* 修复cpu省电，还原配置无法恢复频率的问题。
+
+
+##### v2.1.7
+
+发布时间：2020.05.19
+
+new feature:
+
+* 优化cpu省电提示，处理卸载后再次运行不安装cpufrequtils的问题。
+
+##### v2.1.5
+
+发布时间：2020.03.28
+
+new feature:
+
+* 解决docker重启不能自动启动的问题。
+
+##### v2.1.4
+
+发布时间：2020.02.21
+
+new feature:
+
+* 常用工具中增加释放内存、speedtest、bbr\bbr+、v2ray功能
+
+##### v2.1.3
+
+发布时间：2019.12.24
+
+new feature:
+
+* 优化samba回收站配置,在设置共享文件夹时自动提示是否开启；可以单独增加和取消某个共享文件夹的回收站；
+* 优化web界面温度显示功能
+
+##### v2.1.2
+
+发布时间：2019.12.18
+
+new feature:
+
+* 增加samba回收站配置
+
+##### v2.1.1
+
+发布时间：2019.12.16
+
+new feature:
+
+* 常用工具中增加dns配置
+
+##### v2.1.0
+
+发布时间：2019.12.09
+
+new feature:
+
+* 增加在pve中直接安装omv( [omvInPve](https://github.com/ivanhao/omvinpve))。
+
+##### v2.0.9
+
+发布时间：2019.12.04
+
+new feature:
+
+* 增加samba共享文件夹权限自动配置，不再需要手工配置权限；同时删除共享文件夹会自动还原原来的用户组权限。
+  建议之前已使用的用户可以先删除旧的共享文件夹，手工恢复权限后，再用工具配置添加。
+
+##### v2.0.8
+
+发布时间：2019.11.28
+
+new feature:
+
+*   增加chroot自定义安装路径的功能。
+*   增加chroot docker迁移的功能。
+ [wiki](https://github.com/ivanhao/pvetools/wiki/m--1-%E9%85%8D%E7%BD%AEdocker-web%E7%95%8C%E9%9D%A2)
+
+##### v2.0.7
+
+发布时间：2019.11.25
+
+new feature:
+
+*   增加安装NFS的功能。
+
+##### [](https://github.com/ivanhao/pvetools#v206-1)v2.0.6
+
+发布时间：2019.11.20
+
+new feature:
+
+*   增加常用工具，此版本增加了局域网扫描
+*   修复dockerd启动bug
+
+##### [](https://github.com/ivanhao/pvetools#v205)v2.0.5
+
+发布时间：2019.11.14
+
+new feature:
+
+*   chroot优化,增加对alpine版本的判断，优化速度
+*   中文环境下包的下载全改到国内服务器
+*   docker配置国内源
+*   portainer改用docker pull的方式拉取镜像（之前使用tar包部署，github上下载包太慢）
+*   增加chroot后台管理功能，检测chroot的运行
+*   删除代码目录中的图片，改成简书图片链接
+
+
+##### v2.0.4
+发布时间：2019.11.06
+
+new feature:
+- 增加docker的web界面（portainer)
+- 去除隐藏的命令输出，例如apt-get install的输出等。
+- chroot优化
+
+
+##### v2.0.3
+发布时间：2019.11.04
+
+new feature:
+- 增加qm set映射物理硬盘的功能
+
+
+##### v2.0.2
+发布时间：2019.11.01
+
+new feature:
+- 增加chroot功能，默认安装好Alpine
+- 增加docker功能，默认安装在Alpine中
+- bug修复
+
+##### v2.0.1
+发布时间：2019.10.24
+
+new feature:
+- 增加显卡直通的支持
+
+
+##### v2.0
+发布时间：2019.10.01
+
+new feature:
+- 界面修改为whiptail，交互性更好，不需要输入字母来选择
+- bug修复
+
+### installation method
+
+###### 1. command line
+
+##### for english user:
+
+Use root accout to run.
+
+```
+export LC_ALL=en_US.UTF-8
+apt update && apt -y install git && git clone https://github.com/ivanhao/pvetools.git
+cd pvetools
 ./pvetools.sh
 ```
-# 馃枼锔?PVETools - Proxmox VE 缁煎悎绠＄悊宸ュ叿
+>If update error,you can remove enterprise source by : `rm /etc/apt/sources.list.d/pve-enterprise.list` and retry.
 
-<div align="center">
+###### 2. download
 
-![Version](https://img.shields.io/badge/鐗堟湰-v3.2-blue)
-![PVE](https://img.shields.io/badge/PVE-7.x%20%2F%208.x%20%2F%209.x-green)
-![License](https://img.shields.io/badge/璁稿彲-MIT-orange)
-![Platform](https://img.shields.io/badge/骞冲彴-Linux-lightgrey)
+![download](https://upload-images.jianshu.io/upload_images/4171480-49193f4b6f4040fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-**涓€绔欏紡 Proxmox VE 杩愮淮绠＄悊鑴氭湰**
+### Interface
 
-闆嗘垚 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞嗐€佺‖鐩樼洿閫氱瓑鍔熻兘
+![main](https://upload-images.jianshu.io/upload_images/4171480-501e3adb625c82fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[蹇€熷紑濮媇(#-蹇€熷紑濮? 鈥?[鍔熻兘浠嬬粛](#-鍔熻兘妯″潡) 鈥?[浣跨敤鎸囧崡](USAGE.md) 鈥?[甯歌闂](#-甯歌闂)
+![main1](https://upload-images.jianshu.io/upload_images/4171480-0e0920b58ce482d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-</div>
 
----
 
-## 馃摙 椤圭洰淇℃伅
 
-**浣滆€?*锛氬鐙埗浣? 
-**鐢垫姤缇?*锛歔鐐瑰嚮鍔犲叆](https://t.me/+RZMe7fnvvUg1OWJl)  
-**鍏煎鐗堟湰**锛歅VE 7.x / 8.x / 9.x
+### Uninstall
+1. delete pvetools folder
 
----
+### Run
+cd to pvetools folder,and type:`./pvetools.sh`
+* you should `chmod +x pvetools.sh` first.
 
-## 鉁?鍔熻兘妯″潡
 
-### 馃敼 VM/CT 绠＄悊
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| 鍗虫椂鎿嶄綔 | 鍚姩銆侀噸鍚€佸叧鏈恒€佸仠姝€佹寕璧?VM/CT |
-| 蹇収绠＄悊 | 鍒涘缓蹇収銆佹仮澶嶅揩鐓?|
-| 瀹氭椂浠诲姟 | 瀹氭椂閲嶅惎銆佸畾鏃跺垱寤哄揩鐓с€佸畾鏃跺洖婊氬揩鐓?|
-| 鎵归噺鎿嶄綔 | 鏀寔澶氫釜 VMID 鎵归噺鎿嶄綔 |
+#### email configration note：
 
-### 馃敼 Docker 閰嶇疆
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| 瀹夸富鏈洪厤缃?| 閰嶇疆 PVE 瀹夸富鏈烘敮鎸?LXC 杩愯 Docker |
-| 瀹瑰櫒閰嶇疆 | 閰嶇疆 LXC 瀹瑰櫒鐨?Docker 杩愯鐜 |
-| Docker 瀹夎 | 鍦ㄥ鍣ㄥ唴鑷姩瀹夎 Docker |
+you should choose `Internet Site` below, and keep others default.
 
-### 馃敼 瀛樺偍绠＄悊
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| LVM-Thin 瀛樺偍 | 灏嗙墿鐞嗙鐩樺垵濮嬪寲涓?LVM-Thin 瀛樺偍 |
-| 纭洏鐩撮€?| 灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU 铏氭嫙鏈?|
-| 鐩撮€氱鐞?| 鏌ョ湅銆佸垹闄ゅ凡閰嶇疆鐨勭鐩樼洿閫?|
-
-### 馃敼 绯荤粺宸ュ叿
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| 蹇嵎鍛戒护 | 瀹夎 `pvetools` 绯荤粺鍛戒护 |
-| 绯荤粺淇℃伅 | 鏌ョ湅 PVE 鐗堟湰銆佺郴缁熶俊鎭?|
-| 绗笁鏂瑰伐鍏?| Linux 鎹㈡簮銆佺鎶€lion宸ュ叿绠便€丼-UI 闈㈡澘 |
-
----
-
-## 馃殌 蹇€熷紑濮?
-### 涓€閿繍琛岋紙鎺ㄨ崘锛?
-```bash
-# 涓嬭浇骞惰繍琛?wget -qO pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh && bash pvetools.sh
-```
-
-### 鏈湴瀹夎
-
-```bash
-# 1. 涓嬭浇鑴氭湰
-wget -O pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh
-
-# 2. 娣诲姞鎵ц鏉冮檺
-chmod +x pvetools.sh
-
-# 3. 杩愯鑴氭湰
-./pvetools.sh
-
-# 4. (鍙€? 瀹夎蹇嵎鍛戒护 - 閫夋嫨鑿滃崟 [4] -> [1]
-# 涔嬪悗鍙洿鎺ヤ娇鐢?pvetools 鍛戒护
-```
-
-### 绯荤粺瑕佹眰
-
-| 椤圭洰 | 瑕佹眰 |
-|------|------|
-| 鎿嶄綔绯荤粺 | Proxmox VE 7.x / 8.x / 9.x |
-| 鏉冮檺 | root 鐢ㄦ埛 |
-| 渚濊禆 | 鍩烘湰鏃犱緷璧栵紝LVM 鍔熻兘闇€瑕?`lvm2` 鍖?|
-
----
-
-## 馃摉 涓昏彍鍗曢瑙?
-```
-鈺斺晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晽
-鈺?                 PVETools v3.2                               鈺?鈺?               Proxmox VE 缁煎悎绠＄悊宸ュ叿                        鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨暆
-  瀛ょ嫭鍒朵綔 | https://t.me/+RZMe7fnvvUg1OWJl
-
-  PVE 鐗堟湰: 8.x  |  鐜: 瀹夸富鏈?
-璇烽€夋嫨鍔熻兘妯″潡:
-
-  [1] VM/CT 绠＄悊      - 鍗虫椂鎿嶄綔銆佸揩鐓с€佸畾鏃朵换鍔?  [2] Docker 閰嶇疆     - LXC 瀹瑰櫒 Docker 鏀寔
-  [3] 瀛樺偍绠＄悊        - LVM-Thin銆佺‖鐩樼洿閫?  [4] 绯荤粺宸ュ叿        - 蹇嵎鍛戒护銆佹崲婧愩€佺郴缁熶俊鎭?  [5] 甯姪
-
-  [0] 閫€鍑?```
-
----
-
-## 馃敡 鍛戒护琛岀敤娉?
-```bash
-# 浜や簰寮忚彍鍗?pvetools
-
-# 鐩存帴瀹夎蹇嵎鍛戒护
-pvetools install
-
-# 鏄剧ず甯姪淇℃伅
-pvetools -h
-pvetools --help
-
-# 鍐呴儴 cron 璋冪敤锛堝畾鏃朵换鍔′娇鐢級
-pvetools --cron snap-create <type> <vmid> <prefix> <keep> <days>
-pvetools --cron snap-rollback <type> <vmid> latest <prefix>
-```
-
----
-
-## 馃搧 鏂囦欢浣嶇疆
-
-| 绫诲瀷 | 璺緞 |
-|------|------|
-| 鑴氭湰浣嶇疆 | `/usr/local/bin/pvetools` (瀹夎鍚? |
-| 鏃ュ織鏂囦欢 | `/var/log/pvetools.log` |
-| 瀹氭椂閲嶅惎 | `/etc/cron.d/pve-auto-restart-<VMID>` |
-| 瀹氭椂蹇収 | `/etc/cron.d/pve-auto-snap-<VMID>` |
-| 瀹氭椂鍥炴粴 | `/etc/cron.d/pve-auto-rollback-<VMID>` |
-| 蹇収璁板綍 | `/var/lib/pve-auto/snaps-<type>-<VMID>.list` |
-
----
-
-## 鉂?甯歌闂
-
-<details>
-<summary><b>Q: 鎻愮ず"璇蜂互 root 韬唤杩愯姝よ剼鏈?</b></summary>
-
-A: 鏈剼鏈渶瑕?root 鏉冮檺杩愯锛岃浣跨敤浠ヤ笅鏂瑰紡锛?```bash
-sudo ./pvetools.sh
-# 鎴栧垏鎹㈠埌 root 鐢ㄦ埛
-su -
-./pvetools.sh
-```
-</details>
-
-<details>
-<summary><b>Q: 瀹氭椂浠诲姟娌℃湁鎵ц</b></summary>
-
-A: 妫€鏌?cron 鏈嶅姟鐘舵€侊細
-```bash
-systemctl status cron
-# 鏌ョ湅 cron 鏃ュ織
-journalctl -u cron -f
-```
-</details>
-
-<details>
-<summary><b>Q: 蹇収鍒涘缓澶辫触</b></summary>
-
-A: 纭铏氭嫙鏈虹鐩樻敮鎸佸揩鐓у姛鑳斤細
-- 鉁?鏀寔锛歓FS銆丩VM-thin銆丆eph RBD銆佹湰鍦扮洰褰?(qcow2)
-- 鉂?涓嶆敮鎸侊細LVM銆佹湰鍦扮洰褰?(raw)
-</details>
-
-<details>
-<summary><b>Q: Docker 閰嶇疆鍚庡鍣ㄦ棤娉曞惎鍔?/b></summary>
-
-A: 纭繚瀹屾垚浠ヤ笅姝ラ锛?1. 閰嶇疆瀹夸富鏈猴紙闇€閲嶅惎 PVE锛?2. 閰嶇疆鐩爣瀹瑰櫒
-3. 鍦ㄥ鍣ㄥ唴瀹夎 Docker
-</details>
-
-<details>
-<summary><b>Q: 纭洏鐩撮€氬悗 VM 鏃犳硶璇嗗埆纾佺洏</b></summary>
-
-A: 妫€鏌ヤ互涓嬪嚑鐐癸細
-1. 纭 VM 宸插叧鏈哄啀杩涜鐩撮€氶厤缃?2. 妫€鏌ョ鐩樻槸鍚﹁鍏朵粬 VM 鍗犵敤
-3. 灏濊瘯鏇存崲鎺ュ彛绫诲瀷锛圫CSI/SATA/VirtIO锛?</details>
-
----
-
-## 馃檹 鑷磋阿
-
-鏈伐鍏烽泦鎴愪簡浠ヤ笅浼樼鐨勭涓夋柟宸ュ叿锛?
-| 宸ュ叿 | 浣滆€?| 閾炬帴 |
-|------|------|------|
-| Linux 涓€閿崲婧?| SuperManito | [GitHub](https://github.com/SuperManito/LinuxMirrors) |
-| 绉戞妧lion宸ュ叿绠?| kejilion | [GitHub](https://github.com/kejilion/sh) |
-| S-UI 闈㈡澘 | alireza0 | [GitHub](https://github.com/alireza0/s-ui) |
-
----
-
-## 馃摑 鏇存柊鏃ュ織
-
-### v3.2
-- 鏂板锛氱郴缁熷伐鍏烽泦鎴愮涓夋柟宸ュ叿
-  - Linux 涓€閿崲婧?(SuperManito)
-  - 绉戞妧lion宸ュ叿绠?(kejilion)
-  - S-UI 闈㈡澘瀹夎 (alireza0)
-
-### v3.1
-- 鏂板锛氱‖鐩樼洿閫氬姛鑳?  - 鏀寔灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU VM
-  - 鏀寔 SCSI/SATA/VirtIO 鎺ュ彛绫诲瀷
-  - 鏌ョ湅鍜屽垹闄ょ洿閫氶厤缃?
-### v3.0
-- 閲嶆瀯锛氫笁鍚堜竴缁熶竴鑴氭湰
-  - 鏁村悎 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞?  - 鍏ㄦ柊浜や簰寮忚彍鍗曠晫闈?  - 缁熶竴鐨?Y/N 纭鎿嶄綔
-  - 缇庡寲杈撳嚭鏍煎紡
-
-### v2.0
-- Docker LXC 閰嶇疆鍔熻兘
-- LVM-Thin 瀛樺偍绠＄悊
-
-### v1.0
-- 鍒濆鐗堟湰
-- 瀹氭椂閲嶅惎銆佸揩鐓х鐞?
----
-
-## 馃摐 璁稿彲璇?
-鏈」鐩噰鐢?MIT 璁稿彲璇侊紝璇﹁ [LICENSE](LICENSE) 鏂囦欢銆?
----
-
-## 馃 鍙嶉涓庢敮鎸?
-濡傛湁闂鎴栧缓璁紝娆㈣繋锛?
-- 馃摦 鎻愪氦 [Issue](https://github.com/YOUR_USERNAME/PVEt/issues)
-- 馃挰 鍔犲叆 [鐢垫姤缇(https://t.me/+RZMe7fnvvUg1OWJl) 浜ゆ祦
-
----
-
-<div align="center">
-
-**猸?濡傛灉瑙夊緱鏈夌敤锛屾杩?Star 鏀寔锛?*
-
-Made with 鉂わ笍 for PVE Users
-
-</div>
+![mail](https://upload-images.jianshu.io/upload_images/4171480-2ee76fb89c0f253e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
 
