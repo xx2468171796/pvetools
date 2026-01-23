@@ -1,256 +1,122 @@
-﻿# PVETOOLS宸ュ叿浠嬬粛
-
-## 鍥藉唴浣跨敤
-```bash
-# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?wget https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh
-chmod +x pvetools.sh
-./pvetools.sh
-```
-## 鍥藉
-```bash
-# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?wget https://raw.githubusercontent.com/xx2468171796/pvetools/main/pvetools.sh
-chmod +x pvetools.sh
-./pvetools.sh
-```
-# 馃枼锔?PVETools - Proxmox VE 缁煎悎绠＄悊宸ュ叿
+﻿![SmsForwarder](pic/SmsForwarder.png)
 
-<div align="center">
-
-![Version](https://img.shields.io/badge/鐗堟湰-v3.2-blue)
-![PVE](https://img.shields.io/badge/PVE-7.x%20%2F%208.x%20%2F%209.x-green)
-![License](https://img.shields.io/badge/璁稿彲-MIT-orange)
-![Platform](https://img.shields.io/badge/骞冲彴-Linux-lightgrey)
+# SmsForwarder-短信转发器
 
-**涓€绔欏紡 Proxmox VE 杩愮淮绠＄悊鑴氭湰**
+[English Version](README_en.md)
 
-闆嗘垚 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞嗐€佺‖鐩樼洿閫氱瓑鍔熻兘
+[![GitHub release](https://img.shields.io/github/release/pppscn/SmsForwarder.svg)](https://github.com/pppscn/SmsForwarder/releases) [![GitHub stars](https://img.shields.io/github/stars/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/stargazers) [![GitHub forks](https://img.shields.io/github/forks/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/network/members) [![GitHub issues](https://img.shields.io/github/issues/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/issues) [![GitHub license](https://img.shields.io/github/license/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/blob/main/LICENSE)
 
-[蹇€熷紑濮媇(#-蹇€熷紑濮? 鈥?[鍔熻兘浠嬬粛](#-鍔熻兘妯″潡) 鈥?[浣跨敤鎸囧崡](USAGE.md) 鈥?[甯歌闂](#-甯歌闂)
+--------
 
-</div>
+短信转发器——不仅只转发短信，备用机必备神器！
 
----
+监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、企业微信应用消息、飞书群机器人、飞书企业应用、邮箱、bark、webhook、Tele****机器人、Server酱、PushPlus、手机短信等。
 
-## 馃摙 椤圭洰淇℃伅
+包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）
 
-**浣滆€?*锛氬鐙埗浣? 
-**鐢垫姤缇?*锛歔鐐瑰嚮鍔犲叆](https://t.me/+RZMe7fnvvUg1OWJl)  
-**鍏煎鐗堟湰**锛歅VE 7.x / 8.x / 9.x
+自动任务・快捷指令，轻松自动化，助您事半功倍，更多时间享受亲情陪伴！（v3.3 新增）
 
----
+> 注意：从`2022-06-06`开始，原`Java版`的代码归档到`v2.x`分支，不再更新！
 
-## 鉁?鍔熻兘妯″潡
+> `v3.x` 适配 Android 4.4 ~ 13.0
 
-### 馃敼 VM/CT 绠＄悊
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| 鍗虫椂鎿嶄綔 | 鍚姩銆侀噸鍚€佸叧鏈恒€佸仠姝€佹寕璧?VM/CT |
-| 蹇収绠＄悊 | 鍒涘缓蹇収銆佹仮澶嶅揩鐓?|
-| 瀹氭椂浠诲姟 | 瀹氭椂閲嶅惎銆佸畾鏃跺垱寤哄揩鐓с€佸畾鏃跺洖婊氬揩鐓?|
-| 鎵归噺鎿嶄綔 | 鏀寔澶氫釜 VMID 鎵归噺鎿嶄綔 |
+> `加入SmsF预览体验计划`（在线更新每周构建版，率先体验新版&修复BUG）
 
-### 馃敼 Docker 閰嶇疆
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| 瀹夸富鏈洪厤缃?| 閰嶇疆 PVE 瀹夸富鏈烘敮鎸?LXC 杩愯 Docker |
-| 瀹瑰櫒閰嶇疆 | 閰嶇疆 LXC 瀹瑰櫒鐨?Docker 杩愯鐜 |
-| Docker 瀹夎 | 鍦ㄥ鍣ㄥ唴鑷姩瀹夎 Docker |
+**升级操作提示：** 
+- `加入SmsF预览体验计划`后在线更新（`关于软件`页面开启，`v3.3.0_240305+`适用）
+-  手动下载：https://github.com/pppscn/SmsForwarder/actions/workflows/Weekly_Build.yml
 
-### 馃敼 瀛樺偍绠＄悊
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| LVM-Thin 瀛樺偍 | 灏嗙墿鐞嗙鐩樺垵濮嬪寲涓?LVM-Thin 瀛樺偍 |
-| 纭洏鐩撮€?| 灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU 铏氭嫙鏈?|
-| 鐩撮€氱鐞?| 鏌ョ湅銆佸垹闄ゅ凡閰嶇疆鐨勭鐩樼洿閫?|
+--------
 
-### 馃敼 绯荤粺宸ュ叿
-| 鍔熻兘 | 璇存槑 |
-|------|------|
-| 蹇嵎鍛戒护 | 瀹夎 `pvetools` 绯荤粺鍛戒护 |
-| 绯荤粺淇℃伅 | 鏌ョ湅 PVE 鐗堟湰銆佺郴缁熶俊鎭?|
-| 绗笁鏂瑰伐鍏?| Linux 鎹㈡簮銆佺鎶€lion宸ュ叿绠便€丼-UI 闈㈡澘 |
+## 特别声明:
 
----
+* 本仓库发布的`SmsForwarder`项目中涉及的任何代码/APK，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
 
-## 馃殌 蹇€熷紑濮?
-### 涓€閿繍琛岋紙鎺ㄨ崘锛?
-```bash
-# 涓嬭浇骞惰繍琛?wget -qO pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh && bash pvetools.sh
-```
+* 任何用户直接或间接使用或传播`SmsForwarder`的任何代码或APK，无论该等使用是否符合其所在国家或地区，或该等使用或传播发生的国家或地区的法律，`pppscn`和/或代码仓库的任何其他贡献者均不对该等行为产生的任何后果（包括但不限于隐私泄露）负责。
 
-### 鏈湴瀹夎
+* 如果任何单位或个人认为该项目的代码/APK可能涉嫌侵犯其权利，则应及时通知并提供身份证明，所有权证明，我们将在收到认证文件后删除相关代码/APK。
 
-```bash
-# 1. 涓嬭浇鑴氭湰
-wget -O pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh
+* 隐私声明： **SmsForwarder 不会收集任何您的隐私数据！！！** APP启动时发送版本信息发送到友盟统计；手动检查新版本时发送版本号用于检查新版本；除此之外，没有任何数据！！！
 
-# 2. 娣诲姞鎵ц鏉冮檺
-chmod +x pvetools.sh
+* 防诈提醒： `SmsForwarder`完全免费开源，请您在 [打赏](https://gitee.com/pp/SmsForwarder/wikis/pages?sort_id=4912193&doc_id=1821427) 前务必确认是否出于自愿？本项目不参与任何刷单返利担保！**请您远离刷单返利陷阱，谨防网络诈骗！**
 
-# 3. 杩愯鑴氭湰
-./pvetools.sh
+--------
 
-# 4. (鍙€? 瀹夎蹇嵎鍛戒护 - 閫夋嫨鑿滃崟 [4] -> [1]
-# 涔嬪悗鍙洿鎺ヤ娇鐢?pvetools 鍛戒护
-```
+## 工作流程：
 
-### 绯荤粺瑕佹眰
+![工作流程](pic/working_principle.png "working_principle.png")
 
-| 椤圭洰 | 瑕佹眰 |
-|------|------|
-| 鎿嶄綔绯荤粺 | Proxmox VE 7.x / 8.x / 9.x |
-| 鏉冮檺 | root 鐢ㄦ埛 |
-| 渚濊禆 | 鍩烘湰鏃犱緷璧栵紝LVM 鍔熻兘闇€瑕?`lvm2` 鍖?|
+--------
 
----
+## 界面预览：
 
-## 馃摉 涓昏彍鍗曢瑙?
-```
-鈺斺晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晽
-鈺?                 PVETools v3.2                               鈺?鈺?               Proxmox VE 缁煎悎绠＄悊宸ュ叿                        鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨暆
-  瀛ょ嫭鍒朵綔 | https://t.me/+RZMe7fnvvUg1OWJl
+![界面预览](pic/screenshots.jpg "screenshots.jpg")
 
-  PVE 鐗堟湰: 8.x  |  鐜: 瀹夸富鏈?
-璇烽€夋嫨鍔熻兘妯″潡:
+更多截图参见 https://github.com/pppscn/SmsForwarder/wiki
 
-  [1] VM/CT 绠＄悊      - 鍗虫椂鎿嶄綔銆佸揩鐓с€佸畾鏃朵换鍔?  [2] Docker 閰嶇疆     - LXC 瀹瑰櫒 Docker 鏀寔
-  [3] 瀛樺偍绠＄悊        - LVM-Thin銆佺‖鐩樼洿閫?  [4] 绯荤粺宸ュ叿        - 蹇嵎鍛戒护銆佹崲婧愩€佺郴缁熶俊鎭?  [5] 甯姪
+--------
 
-  [0] 閫€鍑?```
+## 下载地址
 
----
+> ⚠ 首发地址：https://github.com/pppscn/SmsForwarder/releases
 
-## 馃敡 鍛戒护琛岀敤娉?
-```bash
-# 浜や簰寮忚彍鍗?pvetools
+> ⚠ 国内镜像：https://gitee.com/pp/SmsForwarder/releases
 
-# 鐩存帴瀹夎蹇嵎鍛戒护
-pvetools install
+> ⚠ 网盘下载：https://wws.lanzoui.com/b025yl86h 访问密码：`pppscn`
 
-# 鏄剧ず甯姪淇℃伅
-pvetools -h
-pvetools --help
+--------
 
-# 鍐呴儴 cron 璋冪敤锛堝畾鏃朵换鍔′娇鐢級
-pvetools --cron snap-create <type> <vmid> <prefix> <keep> <days>
-pvetools --cron snap-rollback <type> <vmid> latest <prefix>
-```
-
----
+## 使用文档【新用户必看！】
 
-## 馃搧 鏂囦欢浣嶇疆
-
-| 绫诲瀷 | 璺緞 |
-|------|------|
-| 鑴氭湰浣嶇疆 | `/usr/local/bin/pvetools` (瀹夎鍚? |
-| 鏃ュ織鏂囦欢 | `/var/log/pvetools.log` |
-| 瀹氭椂閲嶅惎 | `/etc/cron.d/pve-auto-restart-<VMID>` |
-| 瀹氭椂蹇収 | `/etc/cron.d/pve-auto-snap-<VMID>` |
-| 瀹氭椂鍥炴粴 | `/etc/cron.d/pve-auto-rollback-<VMID>` |
-| 蹇収璁板綍 | `/var/lib/pve-auto/snaps-<type>-<VMID>.list` |
+> ⚠ GitHub Wiki：https://github.com/pppscn/SmsForwarder/wiki
 
----
+> ⚠ Gitee Wiki：https://gitee.com/pp/SmsForwarder/wikis/pages
 
-## 鉂?甯歌闂
+![使用流程与问题排查流程](pic/Troubleshooting_Process.png "Troubleshooting_Process.png")
 
-<details>
-<summary><b>Q: 鎻愮ず"璇蜂互 root 韬唤杩愯姝よ剼鏈?</b></summary>
+--------
 
-A: 鏈剼鏈渶瑕?root 鏉冮檺杩愯锛岃浣跨敤浠ヤ笅鏂瑰紡锛?```bash
-sudo ./pvetools.sh
-# 鎴栧垏鎹㈠埌 root 鐢ㄦ埛
-su -
-./pvetools.sh
-```
-</details>
+## 反馈与建议：
 
-<details>
-<summary><b>Q: 瀹氭椂浠诲姟娌℃湁鎵ц</b></summary>
++ 提交issues 或 pr
++ 加入交流群（群内都是机油互帮互助，禁止发任何与SmsForwarder使用无关的内容）
 
-A: 妫€鏌?cron 鏈嶅姟鐘舵€侊細
-```bash
-systemctl status cron
-# 鏌ョ湅 cron 鏃ュ織
-journalctl -u cron -f
-```
-</details>
+|                      TG Group                       |
+|:---------------------------------------------------:|
+|         ![TG Group](pic/tg.png "TG Group")          |
+| [+QBZgnL_fxYM0NjE9](https://t.me/+QBZgnL_fxYM0NjE9) |
 
-<details>
-<summary><b>Q: 蹇収鍒涘缓澶辫触</b></summary>
+## 感谢
 
-A: 纭铏氭嫙鏈虹鐩樻敮鎸佸揩鐓у姛鑳斤細
-- 鉁?鏀寔锛歓FS銆丩VM-thin銆丆eph RBD銆佹湰鍦扮洰褰?(qcow2)
-- 鉂?涓嶆敮鎸侊細LVM銆佹湰鍦扮洰褰?(raw)
-</details>
+> [感谢所有赞助本项目的热心网友 --> 打赏名单](https://gitee.com/pp/SmsForwarder/wikis/pages?sort_id=4912193&doc_id=1821427)
 
-<details>
-<summary><b>Q: Docker 閰嶇疆鍚庡鍣ㄦ棤娉曞惎鍔?/b></summary>
+> 本项目得到以下项目的支持与帮助，在此表示衷心的感谢！
 
-A: 纭繚瀹屾垚浠ヤ笅姝ラ锛?1. 閰嶇疆瀹夸富鏈猴紙闇€閲嶅惎 PVE锛?2. 閰嶇疆鐩爣瀹瑰櫒
-3. 鍦ㄥ鍣ㄥ唴瀹夎 Docker
-</details>
++ https://github.com/xiaoyuanhost/TranspondSms (项目原型)
++ https://github.com/xuexiangjys/XUI （UI框架）
++ https://github.com/xuexiangjys/XUpdate （在线升级）
++ https://github.com/getActivity/XXPermissions (权限请求框架)
++ https://github.com/mainfunx/frpc_android (内网穿透)
++ https://github.com/gyf-dev/Cactus (保活措施)
++ https://github.com/yanzhenjie/AndServer (HttpServer)
++ https://github.com/jenly1314/Location (Location)
++ https://gitee.com/xuankaicat/kmnkt (socket通信)
++ [<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg" alt="GitHub license" style="width：159px; height: 32px" width="159" height="32" />](https://jb.gg/OpenSourceSupport)  (License Certificate for JetBrains All Products Pack)
 
-<details>
-<summary><b>Q: 纭洏鐩撮€氬悗 VM 鏃犳硶璇嗗埆纾佺洏</b></summary>
+--------
 
-A: 妫€鏌ヤ互涓嬪嚑鐐癸細
-1. 纭 VM 宸插叧鏈哄啀杩涜鐩撮€氶厤缃?2. 妫€鏌ョ鐩樻槸鍚﹁鍏朵粬 VM 鍗犵敤
-3. 灏濊瘯鏇存崲鎺ュ彛绫诲瀷锛圫CSI/SATA/VirtIO锛?</details>
+## 如果您觉得本工具对您有帮助，不妨在右上角点亮一颗小星星，以示鼓励！
 
----
+<a href="https://star-history.com/#pppscn/SmsForwarder&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date" />
+  </picture>
+</a>
 
-## 馃檹 鑷磋阿
+--------
 
-鏈伐鍏烽泦鎴愪簡浠ヤ笅浼樼鐨勭涓夋柟宸ュ叿锛?
-| 宸ュ叿 | 浣滆€?| 閾炬帴 |
-|------|------|------|
-| Linux 涓€閿崲婧?| SuperManito | [GitHub](https://github.com/SuperManito/LinuxMirrors) |
-| 绉戞妧lion宸ュ叿绠?| kejilion | [GitHub](https://github.com/kejilion/sh) |
-| S-UI 闈㈡澘 | alireza0 | [GitHub](https://github.com/alireza0/s-ui) |
+## LICENSE
 
----
-
-## 馃摑 鏇存柊鏃ュ織
-
-### v3.2
-- 鏂板锛氱郴缁熷伐鍏烽泦鎴愮涓夋柟宸ュ叿
-  - Linux 涓€閿崲婧?(SuperManito)
-  - 绉戞妧lion宸ュ叿绠?(kejilion)
-  - S-UI 闈㈡澘瀹夎 (alireza0)
-
-### v3.1
-- 鏂板锛氱‖鐩樼洿閫氬姛鑳?  - 鏀寔灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU VM
-  - 鏀寔 SCSI/SATA/VirtIO 鎺ュ彛绫诲瀷
-  - 鏌ョ湅鍜屽垹闄ょ洿閫氶厤缃?
-### v3.0
-- 閲嶆瀯锛氫笁鍚堜竴缁熶竴鑴氭湰
-  - 鏁村悎 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞?  - 鍏ㄦ柊浜や簰寮忚彍鍗曠晫闈?  - 缁熶竴鐨?Y/N 纭鎿嶄綔
-  - 缇庡寲杈撳嚭鏍煎紡
-
-### v2.0
-- Docker LXC 閰嶇疆鍔熻兘
-- LVM-Thin 瀛樺偍绠＄悊
-
-### v1.0
-- 鍒濆鐗堟湰
-- 瀹氭椂閲嶅惎銆佸揩鐓х鐞?
----
-
-## 馃摐 璁稿彲璇?
-鏈」鐩噰鐢?MIT 璁稿彲璇侊紝璇﹁ [LICENSE](LICENSE) 鏂囦欢銆?
----
-
-## 馃 鍙嶉涓庢敮鎸?
-濡傛湁闂鎴栧缓璁紝娆㈣繋锛?
-- 馃摦 鎻愪氦 [Issue](https://github.com/YOUR_USERNAME/PVEt/issues)
-- 馃挰 鍔犲叆 [鐢垫姤缇(https://t.me/+RZMe7fnvvUg1OWJl) 浜ゆ祦
-
----
-
-<div align="center">
-
-**猸?濡傛灉瑙夊緱鏈夌敤锛屾杩?Star 鏀寔锛?*
-
-Made with 鉂わ笍 for PVE Users
-
-</div>
+BSD
