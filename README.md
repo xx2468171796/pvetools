@@ -1,289 +1,317 @@
-# PVETOOLS工具介绍
+﻿# PVETOOLS宸ュ叿浠嬬粛
 
-## 国内使用
+## 鍥藉唴浣跨敤
 ```bash
-# 下载并运行安装脚本
+# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?
 wget https://gitee.com/Poker-Face/pvetools/raw/master/pvetools.sh
 chmod +x pvetools.sh
 ./pvetools.sh
 ```
-## 国外
+## 鍥藉
 ```bash
-# 下载并运行安装脚本
+# 涓嬭浇骞惰繍琛屽畨瑁呰剼鏈?
 wget https://raw.githubusercontent.com/xx2468171796/pvetools/main/pvetools.sh
 chmod +x pvetools.sh
 ./pvetools.sh
 ```
-# 🖥️ PVETools - Proxmox VE 综合管理工具
+# 馃枼锔?PVETools - Proxmox VE 缁煎悎绠＄悊宸ュ叿
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/版本-v3.2-blue)
+![Version](https://img.shields.io/badge/鐗堟湰-v3.2-blue)
 ![PVE](https://img.shields.io/badge/PVE-7.x%20%2F%208.x%20%2F%209.x-green)
-![License](https://img.shields.io/badge/许可-MIT-orange)
-![Platform](https://img.shields.io/badge/平台-Linux-lightgrey)
+![License](https://img.shields.io/badge/璁稿彲-MIT-orange)
+![Platform](https://img.shields.io/badge/骞冲彴-Linux-lightgrey)
 
-**一站式 Proxmox VE 运维管理脚本**
+**涓€绔欏紡 Proxmox VE 杩愮淮绠＄悊鑴氭湰**
 
-集成 VM/CT 管理、Docker 配置、存储管理、硬盘直通等功能
+闆嗘垚 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞嗐€佺‖鐩樼洿閫氱瓑鍔熻兘
 
-[快速开始](#-快速开始) •
-[功能介绍](#-功能模块) •
-[使用指南](USAGE.md) •
-[常见问题](#-常见问题)
+[蹇€熷紑濮媇(#-蹇€熷紑濮? 鈥?
+[鍔熻兘浠嬬粛](#-鍔熻兘妯″潡) 鈥?
+[浣跨敤鎸囧崡](USAGE.md) 鈥?
+[甯歌闂](#-甯歌闂)
 
 </div>
 
 ---
 
-## 📢 项目信息
+## 馃摙 椤圭洰淇℃伅
 
-**作者**：孤独制作  
-**电报群**：[点击加入](https://t.me/+RZMe7fnvvUg1OWJl)  
-**兼容版本**：PVE 7.x / 8.x / 9.x
-
----
-
-## ✨ 功能模块
-
-### 🔹 VM/CT 管理
-| 功能 | 说明 |
-|------|------|
-| 即时操作 | 启动、重启、关机、停止、挂起 VM/CT |
-| 快照管理 | 创建快照、恢复快照 |
-| 定时任务 | 定时重启、定时创建快照、定时回滚快照 |
-| 批量操作 | 支持多个 VMID 批量操作 |
-
-### 🔹 Docker 配置
-| 功能 | 说明 |
-|------|------|
-| 宿主机配置 | 配置 PVE 宿主机支持 LXC 运行 Docker |
-| 容器配置 | 配置 LXC 容器的 Docker 运行环境 |
-| Docker 安装 | 在容器内自动安装 Docker |
-
-### 🔹 存储管理
-| 功能 | 说明 |
-|------|------|
-| LVM-Thin 存储 | 将物理磁盘初始化为 LVM-Thin 存储 |
-| 硬盘直通 | 将物理磁盘直通到 QEMU 虚拟机 |
-| 直通管理 | 查看、删除已配置的磁盘直通 |
-
-### 🔹 系统工具
-| 功能 | 说明 |
-|------|------|
-| 快捷命令 | 安装 `pvetools` 系统命令 |
-| 系统信息 | 查看 PVE 版本、系统信息 |
-| 第三方工具 | Linux 换源、科技lion工具箱、S-UI 面板 |
+**浣滆€?*锛氬鐙埗浣? 
+**鐢垫姤缇?*锛歔鐐瑰嚮鍔犲叆](https://t.me/+RZMe7fnvvUg1OWJl)  
+**鍏煎鐗堟湰**锛歅VE 7.x / 8.x / 9.x
 
 ---
 
-## 🚀 快速开始
+## 鉁?鍔熻兘妯″潡
 
-### 一键运行（推荐）
+### 馃敼 VM/CT 绠＄悊
+| 鍔熻兘 | 璇存槑 |
+|------|------|
+| 鍗虫椂鎿嶄綔 | 鍚姩銆侀噸鍚€佸叧鏈恒€佸仠姝€佹寕璧?VM/CT |
+| 蹇収绠＄悊 | 鍒涘缓蹇収銆佹仮澶嶅揩鐓?|
+| 瀹氭椂浠诲姟 | 瀹氭椂閲嶅惎銆佸畾鏃跺垱寤哄揩鐓с€佸畾鏃跺洖婊氬揩鐓?|
+| 鎵归噺鎿嶄綔 | 鏀寔澶氫釜 VMID 鎵归噺鎿嶄綔 |
+
+### 馃敼 Docker 閰嶇疆
+| 鍔熻兘 | 璇存槑 |
+|------|------|
+| 瀹夸富鏈洪厤缃?| 閰嶇疆 PVE 瀹夸富鏈烘敮鎸?LXC 杩愯 Docker |
+| 瀹瑰櫒閰嶇疆 | 閰嶇疆 LXC 瀹瑰櫒鐨?Docker 杩愯鐜 |
+| Docker 瀹夎 | 鍦ㄥ鍣ㄥ唴鑷姩瀹夎 Docker |
+
+### 馃敼 瀛樺偍绠＄悊
+| 鍔熻兘 | 璇存槑 |
+|------|------|
+| LVM-Thin 瀛樺偍 | 灏嗙墿鐞嗙鐩樺垵濮嬪寲涓?LVM-Thin 瀛樺偍 |
+| 纭洏鐩撮€?| 灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU 铏氭嫙鏈?|
+| 鐩撮€氱鐞?| 鏌ョ湅銆佸垹闄ゅ凡閰嶇疆鐨勭鐩樼洿閫?|
+
+### 馃敼 绯荤粺宸ュ叿
+| 鍔熻兘 | 璇存槑 |
+|------|------|
+| 蹇嵎鍛戒护 | 瀹夎 `pvetools` 绯荤粺鍛戒护 |
+| 绯荤粺淇℃伅 | 鏌ョ湅 PVE 鐗堟湰銆佺郴缁熶俊鎭?|
+| 绗笁鏂瑰伐鍏?| Linux 鎹㈡簮銆佺鎶€lion宸ュ叿绠便€丼-UI 闈㈡澘 |
+
+---
+
+## 馃殌 蹇€熷紑濮?
+
+### 涓€閿繍琛岋紙鎺ㄨ崘锛?
 
 ```bash
-# 下载并运行
+# 涓嬭浇骞惰繍琛?
 wget -qO pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh && bash pvetools.sh
 ```
 
-### 本地安装
+### 鏈湴瀹夎
 
 ```bash
-# 1. 下载脚本
+# 1. 涓嬭浇鑴氭湰
 wget -O pvetools.sh https://raw.githubusercontent.com/YOUR_USERNAME/PVEt/main/pvetools.sh
 
-# 2. 添加执行权限
+# 2. 娣诲姞鎵ц鏉冮檺
 chmod +x pvetools.sh
 
-# 3. 运行脚本
+# 3. 杩愯鑴氭湰
 ./pvetools.sh
 
-# 4. (可选) 安装快捷命令 - 选择菜单 [4] -> [1]
-# 之后可直接使用 pvetools 命令
+# 4. (鍙€? 瀹夎蹇嵎鍛戒护 - 閫夋嫨鑿滃崟 [4] -> [1]
+# 涔嬪悗鍙洿鎺ヤ娇鐢?pvetools 鍛戒护
 ```
 
-### 系统要求
+### 绯荤粺瑕佹眰
 
-| 项目 | 要求 |
+| 椤圭洰 | 瑕佹眰 |
 |------|------|
-| 操作系统 | Proxmox VE 7.x / 8.x / 9.x |
-| 权限 | root 用户 |
-| 依赖 | 基本无依赖，LVM 功能需要 `lvm2` 包 |
+| 鎿嶄綔绯荤粺 | Proxmox VE 7.x / 8.x / 9.x |
+| 鏉冮檺 | root 鐢ㄦ埛 |
+| 渚濊禆 | 鍩烘湰鏃犱緷璧栵紝LVM 鍔熻兘闇€瑕?`lvm2` 鍖?|
 
 ---
 
-## 📖 主菜单预览
+## 馃摉 涓昏彍鍗曢瑙?
 
 ```
-╔══════════════════════════════════════════════════════════════╗
-║                  PVETools v3.2                               ║
-║                Proxmox VE 综合管理工具                        ║
-╚══════════════════════════════════════════════════════════════╝
-  孤独制作 | https://t.me/+RZMe7fnvvUg1OWJl
+鈺斺晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晽
+鈺?                 PVETools v3.2                               鈺?
+鈺?               Proxmox VE 缁煎悎绠＄悊宸ュ叿                        鈺?
+鈺氣晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨暆
+  瀛ょ嫭鍒朵綔 | https://t.me/+RZMe7fnvvUg1OWJl
 
-  PVE 版本: 8.x  |  环境: 宿主机
+  PVE 鐗堟湰: 8.x  |  鐜: 瀹夸富鏈?
 
-请选择功能模块:
+璇烽€夋嫨鍔熻兘妯″潡:
 
-  [1] VM/CT 管理      - 即时操作、快照、定时任务
-  [2] Docker 配置     - LXC 容器 Docker 支持
-  [3] 存储管理        - LVM-Thin、硬盘直通
-  [4] 系统工具        - 快捷命令、换源、系统信息
-  [5] 帮助
+  [1] VM/CT 绠＄悊      - 鍗虫椂鎿嶄綔銆佸揩鐓с€佸畾鏃朵换鍔?
+  [2] Docker 閰嶇疆     - LXC 瀹瑰櫒 Docker 鏀寔
+  [3] 瀛樺偍绠＄悊        - LVM-Thin銆佺‖鐩樼洿閫?
+  [4] 绯荤粺宸ュ叿        - 蹇嵎鍛戒护銆佹崲婧愩€佺郴缁熶俊鎭?
+  [5] 甯姪
 
-  [0] 退出
+  [0] 閫€鍑?
 ```
 
 ---
 
-## 🔧 命令行用法
+## 馃敡 鍛戒护琛岀敤娉?
 
 ```bash
-# 交互式菜单
+# 浜や簰寮忚彍鍗?
 pvetools
 
-# 直接安装快捷命令
+# 鐩存帴瀹夎蹇嵎鍛戒护
 pvetools install
 
-# 显示帮助信息
+# 鏄剧ず甯姪淇℃伅
 pvetools -h
 pvetools --help
 
-# 内部 cron 调用（定时任务使用）
+# 鍐呴儴 cron 璋冪敤锛堝畾鏃朵换鍔′娇鐢級
 pvetools --cron snap-create <type> <vmid> <prefix> <keep> <days>
 pvetools --cron snap-rollback <type> <vmid> latest <prefix>
 ```
 
 ---
 
-## 📁 文件位置
+## 馃搧 鏂囦欢浣嶇疆
 
-| 类型 | 路径 |
+| 绫诲瀷 | 璺緞 |
 |------|------|
-| 脚本位置 | `/usr/local/bin/pvetools` (安装后) |
-| 日志文件 | `/var/log/pvetools.log` |
-| 定时重启 | `/etc/cron.d/pve-auto-restart-<VMID>` |
-| 定时快照 | `/etc/cron.d/pve-auto-snap-<VMID>` |
-| 定时回滚 | `/etc/cron.d/pve-auto-rollback-<VMID>` |
-| 快照记录 | `/var/lib/pve-auto/snaps-<type>-<VMID>.list` |
+| 鑴氭湰浣嶇疆 | `/usr/local/bin/pvetools` (瀹夎鍚? |
+| 鏃ュ織鏂囦欢 | `/var/log/pvetools.log` |
+| 瀹氭椂閲嶅惎 | `/etc/cron.d/pve-auto-restart-<VMID>` |
+| 瀹氭椂蹇収 | `/etc/cron.d/pve-auto-snap-<VMID>` |
+| 瀹氭椂鍥炴粴 | `/etc/cron.d/pve-auto-rollback-<VMID>` |
+| 蹇収璁板綍 | `/var/lib/pve-auto/snaps-<type>-<VMID>.list` |
 
 ---
 
-## ❓ 常见问题
+## 鉂?甯歌闂
 
 <details>
-<summary><b>Q: 提示"请以 root 身份运行此脚本"</b></summary>
+<summary><b>Q: 鎻愮ず"璇蜂互 root 韬唤杩愯姝よ剼鏈?</b></summary>
 
-A: 本脚本需要 root 权限运行，请使用以下方式：
+A: 鏈剼鏈渶瑕?root 鏉冮檺杩愯锛岃浣跨敤浠ヤ笅鏂瑰紡锛?
 ```bash
 sudo ./pvetools.sh
-# 或切换到 root 用户
+# 鎴栧垏鎹㈠埌 root 鐢ㄦ埛
 su -
 ./pvetools.sh
 ```
 </details>
 
 <details>
-<summary><b>Q: 定时任务没有执行</b></summary>
+<summary><b>Q: 瀹氭椂浠诲姟娌℃湁鎵ц</b></summary>
 
-A: 检查 cron 服务状态：
+A: 妫€鏌?cron 鏈嶅姟鐘舵€侊細
 ```bash
 systemctl status cron
-# 查看 cron 日志
+# 鏌ョ湅 cron 鏃ュ織
 journalctl -u cron -f
 ```
 </details>
 
 <details>
-<summary><b>Q: 快照创建失败</b></summary>
+<summary><b>Q: 蹇収鍒涘缓澶辫触</b></summary>
 
-A: 确认虚拟机磁盘支持快照功能：
-- ✅ 支持：ZFS、LVM-thin、Ceph RBD、本地目录 (qcow2)
-- ❌ 不支持：LVM、本地目录 (raw)
+A: 纭铏氭嫙鏈虹鐩樻敮鎸佸揩鐓у姛鑳斤細
+- 鉁?鏀寔锛歓FS銆丩VM-thin銆丆eph RBD銆佹湰鍦扮洰褰?(qcow2)
+- 鉂?涓嶆敮鎸侊細LVM銆佹湰鍦扮洰褰?(raw)
 </details>
 
 <details>
-<summary><b>Q: Docker 配置后容器无法启动</b></summary>
+<summary><b>Q: Docker 閰嶇疆鍚庡鍣ㄦ棤娉曞惎鍔?/b></summary>
 
-A: 确保完成以下步骤：
-1. 配置宿主机（需重启 PVE）
-2. 配置目标容器
-3. 在容器内安装 Docker
+A: 纭繚瀹屾垚浠ヤ笅姝ラ锛?
+1. 閰嶇疆瀹夸富鏈猴紙闇€閲嶅惎 PVE锛?
+2. 閰嶇疆鐩爣瀹瑰櫒
+3. 鍦ㄥ鍣ㄥ唴瀹夎 Docker
 </details>
 
 <details>
-<summary><b>Q: 硬盘直通后 VM 无法识别磁盘</b></summary>
+<summary><b>Q: 纭洏鐩撮€氬悗 VM 鏃犳硶璇嗗埆纾佺洏</b></summary>
 
-A: 检查以下几点：
-1. 确认 VM 已关机再进行直通配置
-2. 检查磁盘是否被其他 VM 占用
-3. 尝试更换接口类型（SCSI/SATA/VirtIO）
+A: 妫€鏌ヤ互涓嬪嚑鐐癸細
+1. 纭 VM 宸插叧鏈哄啀杩涜鐩撮€氶厤缃?
+2. 妫€鏌ョ鐩樻槸鍚﹁鍏朵粬 VM 鍗犵敤
+3. 灏濊瘯鏇存崲鎺ュ彛绫诲瀷锛圫CSI/SATA/VirtIO锛?
 </details>
 
 ---
 
-## 🙏 致谢
+## 馃檹 鑷磋阿
 
-本工具集成了以下优秀的第三方工具：
+鏈伐鍏烽泦鎴愪簡浠ヤ笅浼樼鐨勭涓夋柟宸ュ叿锛?
 
-| 工具 | 作者 | 链接 |
+| 宸ュ叿 | 浣滆€?| 閾炬帴 |
 |------|------|------|
-| Linux 一键换源 | SuperManito | [GitHub](https://github.com/SuperManito/LinuxMirrors) |
-| 科技lion工具箱 | kejilion | [GitHub](https://github.com/kejilion/sh) |
-| S-UI 面板 | alireza0 | [GitHub](https://github.com/alireza0/s-ui) |
+| Linux 涓€閿崲婧?| SuperManito | [GitHub](https://github.com/SuperManito/LinuxMirrors) |
+| 绉戞妧lion宸ュ叿绠?| kejilion | [GitHub](https://github.com/kejilion/sh) |
+| S-UI 闈㈡澘 | alireza0 | [GitHub](https://github.com/alireza0/s-ui) |
 
 ---
 
-## 📝 更新日志
+## 馃摑 鏇存柊鏃ュ織
 
 ### v3.2
-- 新增：系统工具集成第三方工具
-  - Linux 一键换源 (SuperManito)
-  - 科技lion工具箱 (kejilion)
-  - S-UI 面板安装 (alireza0)
+- 鏂板锛氱郴缁熷伐鍏烽泦鎴愮涓夋柟宸ュ叿
+  - Linux 涓€閿崲婧?(SuperManito)
+  - 绉戞妧lion宸ュ叿绠?(kejilion)
+  - S-UI 闈㈡澘瀹夎 (alireza0)
 
 ### v3.1
-- 新增：硬盘直通功能
-  - 支持将物理磁盘直通到 QEMU VM
-  - 支持 SCSI/SATA/VirtIO 接口类型
-  - 查看和删除直通配置
+- 鏂板锛氱‖鐩樼洿閫氬姛鑳?
+  - 鏀寔灏嗙墿鐞嗙鐩樼洿閫氬埌 QEMU VM
+  - 鏀寔 SCSI/SATA/VirtIO 鎺ュ彛绫诲瀷
+  - 鏌ョ湅鍜屽垹闄ょ洿閫氶厤缃?
 
 ### v3.0
-- 重构：三合一统一脚本
-  - 整合 VM/CT 管理、Docker 配置、存储管理
-  - 全新交互式菜单界面
-  - 统一的 Y/N 确认操作
-  - 美化输出格式
+- 閲嶆瀯锛氫笁鍚堜竴缁熶竴鑴氭湰
+  - 鏁村悎 VM/CT 绠＄悊銆丏ocker 閰嶇疆銆佸瓨鍌ㄧ鐞?
+  - 鍏ㄦ柊浜や簰寮忚彍鍗曠晫闈?
+  - 缁熶竴鐨?Y/N 纭鎿嶄綔
+  - 缇庡寲杈撳嚭鏍煎紡
 
 ### v2.0
-- Docker LXC 配置功能
-- LVM-Thin 存储管理
+- Docker LXC 閰嶇疆鍔熻兘
+- LVM-Thin 瀛樺偍绠＄悊
 
 ### v1.0
-- 初始版本
-- 定时重启、快照管理
+- 鍒濆鐗堟湰
+- 瀹氭椂閲嶅惎銆佸揩鐓х鐞?
 
 ---
 
-## 📜 许可证
+## 馃摐 璁稿彲璇?
 
-本项目采用 MIT 许可证，详见 [LICENSE](LICENSE) 文件。
+鏈」鐩噰鐢?MIT 璁稿彲璇侊紝璇﹁ [LICENSE](LICENSE) 鏂囦欢銆?
 
 ---
 
-## 🤝 反馈与支持
+## 馃 鍙嶉涓庢敮鎸?
 
-如有问题或建议，欢迎：
+濡傛湁闂鎴栧缓璁紝娆㈣繋锛?
 
-- 📮 提交 [Issue](https://github.com/YOUR_USERNAME/PVEt/issues)
-- 💬 加入 [电报群](https://t.me/+RZMe7fnvvUg1OWJl) 交流
+- 馃摦 鎻愪氦 [Issue](https://github.com/YOUR_USERNAME/PVEt/issues)
+- 馃挰 鍔犲叆 [鐢垫姤缇(https://t.me/+RZMe7fnvvUg1OWJl) 浜ゆ祦
 
 ---
 
 <div align="center">
 
-**⭐ 如果觉得有用，欢迎 Star 支持！**
+**猸?濡傛灉瑙夊緱鏈夌敤锛屾杩?Star 鏀寔锛?*
 
-Made with ❤️ for PVE Users
+Made with 鉂わ笍 for PVE Users
 
 </div>
+---
+
+## 支持作者 / 打赏
+
+如果这个项目对你有帮助，欢迎支持作者继续维护更新（不强制，量力而行）。
+
+![赞赏码](PixPin_2026-01-04_21-45-29.png)
+
+### USDT (TRC20)
+
+- 地址：TNp2BLnqrsgGPjrABQwvTq6cWyT8iRKk3D
+- 网络：TRC20
+
+![USDT TRC20 QR](4c16614c5d097e583f728e3c3671b10e.jpg)
+
+## Support / Donate
+
+If this project helps you, consider supporting the author (optional).
+
+![Donate QR](PixPin_2026-01-04_21-45-29.png)
+
+### USDT (TRC20)
+
+- Address: TNp2BLnqrsgGPjrABQwvTq6cWyT8iRKk3D
+- Network: TRC20
+
+![USDT TRC20 QR](4c16614c5d097e583f728e3c3671b10e.jpg)
+
